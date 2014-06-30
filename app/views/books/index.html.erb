@@ -1,0 +1,10 @@
+<h3>Books</h3>
+
+<dl>
+  <% @books.each do |book| %>
+    <dt><%= link_to book.title, author_book_path(@author.id, book.id) %></dt>
+      <dd>Published On: <%= book.published_on %></dd>
+      <dd>Price: <%= book.price %></dd>
+      <dd>Author: <%= link_to book.author.name, book.author %></dd>
+  <% end %>
+</dl>
