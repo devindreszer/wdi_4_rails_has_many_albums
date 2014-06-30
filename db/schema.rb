@@ -32,12 +32,12 @@ ActiveRecord::Schema.define(version: 20140630140148) do
     t.string   "title"
     t.decimal  "price"
     t.date     "published_on"
-    t.integer  "authors_id"
+    t.integer  "author_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "books", ["authors_id"], name: "index_books_on_authors_id", using: :btree
+  add_index "books", ["author_id"], name: "index_books_on_author_id", using: :btree
 
   create_table "songs", force: true do |t|
     t.string   "title"

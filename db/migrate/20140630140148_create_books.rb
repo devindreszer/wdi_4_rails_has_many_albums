@@ -4,7 +4,7 @@ class CreateBooks < ActiveRecord::Migration
       t.string :title
       t.decimal :price
       t.date :published_on
-      t.belongs_to :authors, index: true
+      t.belongs_to :author, index: true
 
       t.timestamps
     end
