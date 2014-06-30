@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20140630155854) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "genre"
   end
 
   create_table "authors", force: true do |t|
@@ -47,7 +48,6 @@ ActiveRecord::Schema.define(version: 20140630155854) do
     t.integer  "album_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "genre"
   end
 
   add_index "songs", ["album_id"], name: "index_songs_on_album_id", using: :btree

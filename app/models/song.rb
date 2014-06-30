@@ -1,7 +1,6 @@
 class Song < ActiveRecord::Base
-  GENRES = %w(rock rap country jazz ska)
-
   belongs_to :album
 
-
+  validates :title, :artist, presence: true
+  validates :duration, numericality: { greater_than: 60 }
 end
