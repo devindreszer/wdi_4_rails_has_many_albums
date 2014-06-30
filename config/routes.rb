@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  devise_for :users
   resources :albums, only: [:index, :show] do
     resources :songs, only: [:index, :show]
   end
