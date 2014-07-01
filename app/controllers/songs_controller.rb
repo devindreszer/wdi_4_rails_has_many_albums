@@ -14,7 +14,7 @@ class SongsController < ApplicationController
   end
 
   def new
-    @song = Song.new
+    @song = @albums.songs.new
   end
 
   def create
@@ -27,9 +27,17 @@ class SongsController < ApplicationController
   end
 
   def edit
+    # Get an existing song from an album
+    @song = @album.songs.find(params[:id])
   end
 
   def update
+    @song = @album.songs.find(params[:id])
+    if @song.update(song_params)
+      redirect_to album_songs_path(@album, @song), notice: "You updated a new song."
+    else
+      render :edit
+    end
   end
 
   def destroy

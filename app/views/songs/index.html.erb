@@ -6,7 +6,8 @@
       <dd>Artist: <%= song.artist %></dd>
       <dd>Duration: <%= song.duration %></dd>
       <dd>Price: <%= song.price %></dd>
-      <dd>Album: <%= link_to song.album.name, song.album %></dd>
+      <dd>Album: <%= link_to song.album.name, @album %></dd>
+      <dd><%= link_to "Edit Song", edit_album_song_path(@album.id, song.id) %></dd>
   <% end %>
 </dl>
 
